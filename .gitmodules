@@ -1,3 +1,7 @@
 [submodule "atyna"]
 	path = atyna
 	url = https://github.com/iameo/atyna.git
+[submodule "output"]
+	path = output
+	url = https://github.com/iameo/iameo.github.io.git
+	ignore = all
