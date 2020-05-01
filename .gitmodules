@@ -1,0 +1,3 @@
+[submodule "atyna"]
+	path = atyna
+	url = https://github.com/iameo/atyna.git
