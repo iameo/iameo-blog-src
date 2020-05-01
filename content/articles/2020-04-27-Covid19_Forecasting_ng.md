@@ -1,0 +1,10 @@
+title: Covid-19 Forecasting (NG)
+slug: covid-19-ng-prediction
+date: 2020-04-27 12:16
+author: Emmanuel Okwudike
+category: Machine Learning, Forecast
+tags: ML, forecast, regression, prediction, covid-19, nigeria, catboost
+summary: _I make a model to predict future covid-19 cases in Nigeria. Nothing fancy here but fear of the virus._
+
+
+{% notebook ./notebooks/Covid19_Forecasting(NG).ipynb %}
