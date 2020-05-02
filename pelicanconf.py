@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+
 AUTHOR = 'Emmanuel Okwudike'
 SITENAME = 'bleh'
 SITEURL = ''
@@ -10,6 +11,7 @@ PATH = 'content'
 TIMEZONE = 'Africa/Lagos'
 
 DEFAULT_LANG = 'en'
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

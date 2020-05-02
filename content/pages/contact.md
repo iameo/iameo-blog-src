@@ -1,9 +1,11 @@
 title: Contact Me
 
 
-Completely nude, call my name three times and snort dry pepper.
+While completely nude and standing on Dragon dust, spin anticlockwise and repeatedly call my name until I respond.
 
-_[Page's obviously under construction]_
+_[Page's obviously under construction so check back later]_
 
-### contact
+
+Reach me on Twitter [here](https://twitter.com/__oemmanuel__)
+
 
