@@ -1,7 +1,7 @@
 title: Contact Me
 
 
-While completely nude and standing on Dragon dust, spin anticlockwise and repeatedly call my name until I respond.
+While in sage mode and standing on Dragon dust, spin anticlockwise and repeatedly call my name until I respond.
 
 _[Page's obviously under construction so check back later]_
 
