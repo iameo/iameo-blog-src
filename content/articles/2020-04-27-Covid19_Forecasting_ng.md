@@ -6,5 +6,4 @@ category: Machine Learning, Forecast
 tags: ML, forecast, time series, regression, prediction, covid-19, nigeria, catboost, deep learning
 summary: _I make a model to predict future covid-19 cases in Nigeria. Nothing fancy here but fear of the virus._
 
-
 {% notebook ./notebooks/Covid19_Forecasting(NG).ipynb %}
