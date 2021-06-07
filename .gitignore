@@ -11,7 +11,7 @@ venv/
 notebooks/catboost_info/
 ./notebooks/catboost_info/
 
-
+theme_/
 # C extensions
 *.so
 
