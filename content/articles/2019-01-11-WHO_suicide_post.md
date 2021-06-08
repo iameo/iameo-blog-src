@@ -1,5 +1,5 @@
 title: My Analysis on WHO Suicide Data
-tags: graphs, health, visuals
+tags: graphs, health, visuals, analysis
 summary: _The rate of suicide in the world and where should help be targeted to inorder to reduce the numbers_
 
 
