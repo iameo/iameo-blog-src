@@ -83,6 +83,10 @@ THEME = 'atyna'
 COLOR_SCHEME_CSS = 'github.css'
 SHOW_FULL_ARTICLE = False
 
+DEFAULT_PAGINATION = 4
+
+
+selected_cover = 'paper-plane.gif'
 
 STATIC_PATHS = ['images','downloads', 'notebooks']
 
