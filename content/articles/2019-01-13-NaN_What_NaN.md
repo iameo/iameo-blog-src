@@ -24,7 +24,7 @@ Let's delve into some practical techniques for dealing with missing values, by e
 
 For the sake of this post I have prepared a sample data with some intentionally missing values so as to give us a somewhat personal insight at this.
 
-{% notebook ./notebooks/NaN_What_NaN?.ipynb cells[2:4] %}
+{% notebook ./notebooks/NaN_What_NaN.ipynb cells[2:4] %}
 
 As we can see Age has no presence of NaN, Salary and Desk number have a value of 1. By looking at df you can point them out.
 
