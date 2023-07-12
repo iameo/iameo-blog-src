@@ -77,18 +77,12 @@ Installing snapd...
 
 While the below is finetuned for Nginx on Ubuntu, visit [certbox instructions](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal "certbox instructions for all") to use commands based on your web server.
 
-```
+<code>
 $ sudo snap install core; sudo snap refresh core
-```
-```
 $ sudo snap install --classic certbot
-```
-```
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-```
 $ sudo certbot --nginx -v
-```
+</code>
 
 <span style="font-size: smaller">Before running the last command make sure your domain has been properly configured and you get "All ok!" on [Let's Debug](https://letsdebug.net/). Upon succession, your nginx file is automatically modified to reflect the SSL changes (SSL port, SSL certification, SSL certification key)</span>
 
