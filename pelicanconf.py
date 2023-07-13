@@ -28,8 +28,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 
 # Social widget
-SOCIAL = (('twitter', 'https://twitter.com/__oemmanuel__'),
-          ('github', 'https://github.com/iameo'),
+SOCIAL = (('github', 'https://github.com/iameo'),
           ('envelope','mailto:okwudike.emmanuel@gmail.com'))
 
 DEFAULT_PAGINATION = 10
@@ -42,10 +41,13 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 
 
-MARKUP = ['md', 'ipynb']
+MARKUP = ('md',)
+
+from pelican_jupyter import liquid as nb_liquid
 
 PLUGIN_PATHS = ['./plugins', './plugins/pelican-plugins']
 PLUGINS = [
+    nb_liquid,
     'summary',       # auto-summarizing articles
     'feed_summary',  # use summaries for RSS, not full articles
     'ipynb.liquid',  # for embedding notebooks
@@ -91,7 +93,6 @@ selected_cover = 'paper-plane.gif'
 STATIC_PATHS = ['images','downloads', 'notebooks']
 
 
-TWITTER_USERNAME = '__oemmanuel__'
 GITHUB_USERNAME = 'iameo'
 AUTHOR_BLOG = 'https://iameo.github.io'
 SHOW_ARCHIVES = True
