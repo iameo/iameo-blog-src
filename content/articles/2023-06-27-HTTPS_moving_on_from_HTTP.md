@@ -8,20 +8,20 @@ tags: ssl, https, aws, flask, api, ubuntu, nginx, web development, devOps, backe
 summary: _I move on from HTTP to HTTPS; for security and other benefits_
 
 
-For the past year I've been building and improving VoIP services - at first it was a hobby then it turned into a professional skill for a SaaS firm. This article reflects on the hobby phase and the cross-origin issue I had.[^1]
+For the past year, I've been building and improving on VoIP services - at first it was a hobby then it turned into a professional skill for a SaaS firm in the United States. This article reflects on the hobby phase and the 'HTTP-HTTPS' cross-origin issue I encountered.[^1]
 
 [enter [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS "cors - bane of my web development existence")]
 
-It's February, 2022 and I'm watching a Twilio Conference on YouTube; the next couple of days I'll put to use the Twilio documentation.
+It's February 2022 and I'm watching a Twilio Conference on YouTube; the next couple of days I'll put to use the Twilio documentation.
 
-I have two projects on AWS in regards to this hobby: a rest API utilizing the powers of Twilio — from buying a local number (from a few supported countries) to handling voice calls, running on an [EC2 instance.](https://aws.amazon.com/ec2/) And other project — a web service that hits the API's endpoints. As a fun project, just for me and a colleague to play around with, NGROK was sufficient for local hosting; running a _temporary_ HTTPS It eliminated cross-origin issues, but the con with this 'hack' was its fragility in terms of custom domain availability and short-term use. Also, worthy of note that I could not serve this API on render, vercel or even Heroku as it is quite dense, and it affected performance and latency.
+At the time of writing, I have two projects on AWS in regards to this hobby: a rest API utilizing the powers of Twilio — from buying a local number (from a few supported countries) to handling voice calls, running on an [EC2 instance.](https://aws.amazon.com/ec2/) And the other project — a web service that hits the API's endpoints. As a fun project, just for me and a colleague to play around with, NGROK was sufficient for local hosting; running a _temporary_ HTTPS eliminated cross-origin issues, but the con with this 'hack' was its fragility in terms of custom domain availability and short-term use. Also, worthy of note that I could not serve this API on render, vercel or even Heroku as it is quite dense, and it affected performance and latency.
 
-For the purpose of having my Web service to conveniently hit my API, I had to set both up as HTTPS — moving on from HTTP.
+To have my Web service conveniently hit my API, I had to set both up as HTTPS — moving on from HTTP.
 
 > Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It uses encryption for secure communication over a computer network, and is widely used on the Internet. In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL). The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL. 
 
 
-<span style="font-size: smaller">My Web service had to be HTTPS as well as it uses audio connectivity on browsers and this is disabled on HTTP by browsers, except, of course, localhost. And to allow HTTPS-HTTPS communication</span>
+<span style="font-size: smaller">My Web service had to be HTTPS as well as it uses audio connectivity to establish full calling protocols on browsers and this is disabled on HTTP by browsers, except, of course, localhost. And to allow HTTPS-HTTPS communication</span>
 
 
 
@@ -31,12 +31,12 @@ Moving on, I assume these things:
 - you have Security Groups on this instance properly configured (**80 on HTTP; 443 on HTTPS; and additional PORTS you may need**)
 - your elastic IP points to your ec2 instance that has an active service (in my case gunicorn for my flask application)
 
-To cut cost, we are not using Route 53, Certificate Manager and a Load Balancer to achieve running your instance on HTTPS — in a production, I strongly advise making use of these services. Even more so, if you have just a single instance for your application then this article suits you, <span style="font-size: smaller">but it's not an excuse to not use the aforementioned services.</span>
+To cut costs, we are not using Route 53, Certificate Manager and a Load Balancer to achieve running your instance on HTTPS — in a production environment, I strongly advise making use of these services. Even more so, if you have just a single instance for your application then this article suits you, <span style="font-size: smaller">but it's not an excuse to not use the aforementioned services.</span>
 
 
 ### Getting a Domain
 
-As at June 2023, Freenom Domain registrations and services are down, so I had to opt for buying a domain.  Yikes! 
+As of June 2023, Freenom Domain registrations and services are down, so I had to opt for buying a domain.  Yikes! 
 
 <div style="text-align: center">
     <img class="force-display" src="https://media.tenor.com/POm7fis_GHQAAAAd/ptdr.gif" alt="yikes!" width="400" height="300">
@@ -44,7 +44,7 @@ As at June 2023, Freenom Domain registrations and services are down, so I had to
 
 This step is entirely down to your preferences; from cost, depending on the domain, to domain provider. I purchased a .com.ng on WhogoHost, a domain provider based in Nigeria.
 
-Depending on the domain provider most of the DNS informations will be automatically filled while allowing edit where necessary, under **DNS manager**. This step is ideally initiated once **Add New Zone** is triggered.
+Depending on the domain provider most of the DNS information will be automatically filled while allowing editing where necessary, under **DNS manager**. This step is ideally initiated once **Add New Zone** is triggered.
 
 
 ![whogohost - manage DNS](/images/manage_dns.png "whogohost - manage DNS")
@@ -67,7 +67,7 @@ Good? proceed to.....
 ### Configuring Instance for HTTPS
 
 
-In order to use Certbot, you need a live HTTP website (domain) with an open PORT 80 (EC2's Security Group) which is hosted on a server; in our case Ubuntu server.
+To use Certbot, you need a live HTTP website (domain) with an open PORT 80 (EC2's Security Group) which is hosted on a server; in our case Ubuntu server.
 
 In your machine's terminal (EC2 connect/SSH):
 
@@ -114,9 +114,9 @@ Visit your domain on https: https://yourdomain
 ![https enabled](/images/emvoip.png "HTTPS enabled")
 
 
-### Challanges
+### Challenges
 
-- subsequent to purchasing and adding a new zone in my DNS manager dashboard I could not access my site nor check its DNS information on Let's Debug showed me this:
+- after purchasing and adding a new zone in my DNS manager dashboard I could not access my site nor check its DNS information on Let's Debug showed me this:
 
 ---
 > NoRecords FATAL<br>
@@ -124,7 +124,7 @@ No valid A or AAAA records could be ultimately resolved for emvoip.com.ng.<br>
 This means that Let's Encrypt would not be able to connect to your domain to perform HTTP validation, since it would not know where to connect to.<br>
 No A or AAAA records found.
 
-Incidentally, trying to reach your domain on a browser would result to this:
+Incidentally, trying to reach your domain on a browser would result in this:
 
 
 <blockquote>
@@ -184,11 +184,11 @@ SSL: [what is SSL (Secure Sockets Layer)?](https://www.cloudflare.com/learning/s
 TTL: [What is TTL?](https://www.cloudns.net/wiki/article/188/ "TTL")
 
 
-[^1]: On production level, this API is modeled as a microservice with AWS Load Balancer, CodePipeline, CloudWatch, CloudFront, Route 53, S3, and a couple more Amazon Web Services to ensure better performance, robustness and general security. [check out Amazon Web Services here](https://aws.amazon.com/ "AWS")
+[^1]: Production level, this API is modeled as a microservice with AWS Load Balancer, CodePipeline, CloudWatch, CloudFront, Route 53, S3, and a couple more Amazon Web Services to ensure better performance, robustness and general security. [check out Amazon Web Services here](https://aws.amazon.com/ "AWS")
 
 [^2]: [What is A record](https://support.dnsimple.com/articles/a-record/#:~:text=An%20A%20record%20uses%20a,A%20record%20stands%20for%20Address "What's an A record")
 
 [^3]: Myth or Legend? [Port 22 - EC2](https://stackoverflow.com/questions/44802363/cannot-connect-to-ec2-ssh-connect-to-host-port-22-connection-refused "port 22 and the prisoner of IPban")
 
-[^4]: Seriously, sleep! [see this](https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-fall-asleep-faster-and-sleep-better/ "sleep faster...")
+[^4]: Seriously, sleep! [See this](https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-fall-asleep-faster-and-sleep-better/ "sleep faster...")
 
