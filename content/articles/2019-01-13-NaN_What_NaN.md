@@ -37,7 +37,7 @@ Simply removing missing values could be a fun task, albiet a problematic one. In
 
 Again, it's a fun task. See how:
 
-{% notebook ./notebooks/NaN_What_NaN?.ipynb cells[5:7] %}
+{% notebook ./notebooks/NaN_What_NaN.ipynb cells[5:7] %}
 
 Easy peasy? yeah?
 
@@ -51,7 +51,7 @@ Easy peasy? yeah?
 This is the recommended approach when it's dealing with missing values. It entails replacing Nan with mean, median or mode of that particular row/column.
 A convenient way to achieve this is by using the <code>Imputer</code> class from __scikit-learn__, as shown below:
 
-{% notebook ./notebooks/NaN_What_NaN?.ipynb cells[9:11] %}
+{% notebook ./notebooks/NaN_What_NaN.ipynb cells[9:11] %}
 
 Not much of a task, yeah? no? Okay. We imported the <code>Imputer</code> class from __scikit-learn__, gave it a 'strategy' to handle the data, fitted the data and then transformed it. Easy peasy--no? Just go over it line by line.
 
